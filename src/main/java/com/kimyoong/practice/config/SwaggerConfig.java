@@ -21,7 +21,7 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .useDefaultResponseMessages(false)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.seoulauction.renewal.controller.api"))
+                .apis(RequestHandlerSelectors.basePackage("com.kimyoong.practice.controller"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(apiInfo());
