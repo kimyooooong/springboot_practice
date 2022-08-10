@@ -44,8 +44,11 @@ dependencies {
     implementation 'org.apache.commons:commons-lang3:3.12.0'
     implementation 'commons-net:commons-net:3.3'
 
+    //maria
+    implementation 'org.mariadb.jdbc:mariadb-java-client'
+
     //db
-    //implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.4'
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.4'
 }
 
 tasks.named('test') {
