@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 public class TestController {
 
-
     @GetMapping("/test")
     public ResponseEntity<RestResponse> getTest(){
             return ResponseEntity.ok(RestResponse.ok());
