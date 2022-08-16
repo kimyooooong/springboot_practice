@@ -10,18 +10,9 @@ git clone https://github.com/kimyooooong/springboot_practice.git
 
 ## Server Information
  - JAVA 11 & SpringBoot
- 
-
----
-
-## Development
- - Spring Security
- - Spring ...
-
----
-
 ## Build
  - Gradle
-
+ 
+--- 
 ## Deployment
-TODO...
+ - Spring 
