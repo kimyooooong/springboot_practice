@@ -21,6 +21,9 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter'
 
+    //db
+    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.2.2'
+
     //web
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
@@ -47,8 +50,6 @@ dependencies {
     //maria
     implementation 'org.mariadb.jdbc:mariadb-java-client'
 
-    //db
-    implementation 'org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.4'
 }
 
 tasks.named('test') {
