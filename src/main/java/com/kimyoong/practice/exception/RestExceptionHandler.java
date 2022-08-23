@@ -6,16 +6,9 @@ import com.kimyoong.practice.domain.CommonMap;
 import com.kimyoong.practice.utill.ExceptionUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.HttpRequestMethodNotSupportedException;
-import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import org.springframework.web.servlet.NoHandlerFoundException;
-
-import java.util.Locale;
 
 @Log4j2
 @RestControllerAdvice
@@ -33,17 +26,15 @@ public class RestExceptionHandler {
         slackSender.sendMessage(errorMsg);
 
         CommonMap map = new CommonMap();
+
         String msg = e.getMessage();
         map.put("msg", msg);
 
-        return ResponseEntity.ok(
-                RestResponse.builder().success(false)
-                        .data(map)
-                        .build());
+        return ResponseEntity.ok(RestResponse.builder().success(false).data(map).build());
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<RestResponse> intervalException(Exception e , Locale locale){
+    public ResponseEntity<RestResponse> intervalException(Exception e){
 
         String errorMsg = ExceptionUtils.getStackTrace(e);
         log.error(errorMsg);
