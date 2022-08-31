@@ -24,12 +24,9 @@ public class RestExceptionHandler {
         String errorMsg = ExceptionUtils.getStackTrace(e);
         log.error(errorMsg);
         slackSender.sendMessage(errorMsg);
-
         CommonMap map = new CommonMap();
-
         String msg = e.getMessage();
         map.put("msg", msg);
-
         return ResponseEntity.ok(RestResponse.builder().success(false).data(map).build());
     }
 
@@ -43,6 +40,7 @@ public class RestExceptionHandler {
                 .body(RestResponse.builder().success(false)
                     .data(errorMsg)
                     .build());
+
     }
 
 

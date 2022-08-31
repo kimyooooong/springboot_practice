@@ -58,7 +58,10 @@ public class CommonMap extends HashMap<String, Object>{
 	public Integer getInteger(Object key){
 		return super.get(key) instanceof Integer ? (Integer) super.get(key) : null;
 	}
-	
+	public Boolean getBoolean(Object key){
+		return super.get(key) instanceof Boolean ? (Boolean) super.get(key) : null;
+	}
+
 	@Override
 	public Object get(Object key) {
 		return super.get(key);
